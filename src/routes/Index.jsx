@@ -6,8 +6,11 @@ import BorrowedBook from "../page/BorrowedBook";
 import Login from "../page/Login";
 import Register from "../page/Register";
 import MainLayout from "../components/layout/MainLayout";
-import BooksCart from "../components/booksCart/BooksCart";
 import BookDetails from "../components/booksCart/BookDetails";
+import PrivateRoute from "./PrivateRoute";
+import AllBook from "../page/AllBook";
+import CategoryBook from "../components/booksCart/CategoryBook";
+import UpdateBook from "../components/booksCart/UpdateBook";
 
 const routes = createBrowserRouter([
     {
@@ -17,30 +20,34 @@ const routes = createBrowserRouter([
             {
                 index: true,
                 element: <Home />,
-                // loader: ()=> fetch("http://localhost:5000/api/v1/categories")
             },
             {
                 path: 'addBook',
-                element: <AddBook />
+                element: <PrivateRoute><AddBook /></PrivateRoute>
             },
             {
                 path: 'allBook',
-                element: <AddBook />
+                element: <PrivateRoute><AllBook /></PrivateRoute>
             },
             {
                 path: 'borrowed',
-                element: <BorrowedBook />
+                element: <PrivateRoute><BorrowedBook /></PrivateRoute>
             },
             {
                 path: 'bookCart/:bookCategory',
-                element: <BooksCart></BooksCart>,
+                element: <PrivateRoute><CategoryBook/></PrivateRoute>,
                 loader: ({params})=> fetch(`http://localhost:5000/api/v1/books/${params.bookCategory}`)
             },
             {
                 path: 'book-details/:id',
-                element:<BookDetails></BookDetails>,
-                loader: ({params})=> fetch(`http://localhost:5000/api/v1/book/${params.id}`)
+                element:<PrivateRoute><BookDetails></BookDetails></PrivateRoute>
+                // loader: ({params})=> fetch(`http://localhost:5000/api/v1/book/${params.id}`)
             },
+            {
+                path: 'book-update/:id',
+                element:<UpdateBook></UpdateBook>,
+                loader: ({params})=> fetch(`http://localhost:5000/api/v1/book/${params.id}`)
+            }
 
         ],
     },

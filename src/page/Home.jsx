@@ -4,33 +4,38 @@ import { GrNext } from "react-icons/gr";
 import BookCategories from "../components/bookCategories/BookCategories";
 import { useQuery } from "@tanstack/react-query";
 import useAxios from "../hooks/useAxios";
+import Title from "../components/ui/Title";
 
 
 const Home = () => {
     const axios = useAxios()
 
-    const getCategories = async()=>{
-        const res =await axios.get('/categories')
+    const getCategories = async () => {
+        const res = await axios.get('/categories')
         return res;
     };
 
-    const {data:categories,isLoading} = useQuery({
-        queryKey:["category"],
+    const { data: categories } = useQuery({
+        queryKey: ["category"],
         queryFn: getCategories,
     })
     // console.log(categories);
 
-    if(isLoading){
-        <p>loading...</p>
-    }
+    // if (isLoading) {
+    //     <p>loading...</p>
+    // }
     return (
         <div>
             <Banner></Banner>
-            <div className="grid grid-cols-4 gap-4 px-4">
+            <div>
+                <Title>Books Categories</Title>
+                <div className="grid grid-cols-4 gap-4 px-4">
 
-                {
-                   categories?.data?.map((items)=> <BookCategories key={items._id} category={items}></BookCategories>) 
-                }
+                    {
+                        categories?.data?.map((items) => <BookCategories key={items._id} category={items}></BookCategories>)
+                    }
+                </div>
+
             </div>
             <div className="grid lg:grid-cols-12 grid-cols-1">
                 <div className="lg:col-span-6">

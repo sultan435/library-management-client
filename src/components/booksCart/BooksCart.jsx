@@ -1,29 +1,25 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
-const BooksCart = () => {
-    const book = useLoaderData()
-    console.log(book);
-   
-    return (
-      <div className="grid grid-cols-3 gap-6 py-10">
-          {
-            book.map(items => <div key={items._id} className="card bg-base-100 shadow-xl">
-            <figure><img src={items.image } alt="Shoes" /></figure>
+const BooksCart = ({books}) => {
+  console.log(books);
+  const {image,bookName,bookCategory,bookQuantity,rating,_id} = books
+  return (
+    <div>
+      <div className="card bg-base-100 shadow-xl">
+            <figure><img className="h-80 w-full" src={image } alt="Shoes" /></figure>
             <div className="card-body">
-                <h2 className="card-title">{items.bookName}</h2>
-                <p>{items.bookCategory}</p>
-                <p>rating:{items.rating}</p>
-                <p>Quantity: {items.bookQuantity}</p>
+                <h2 className="card-title">{bookName}</h2>
+                <p>{bookCategory}</p>
+                <p>rating:{rating}</p>
+                <p>Quantity: {bookQuantity}</p>
                 <div className="card-actions justify-end">
-                    <Link to={`/book-details/${items._id}`} className="btn btn-primary">Books Details</Link >
+                    <Link to={`/book-update/${_id}`} className="btn btn-primary">Update Book</Link >
                 </div>
             </div>
-        </div>)
-        }
-      </div>
-        
-    );
+        </div>
+    </div>
+  );
 };
 
 export default BooksCart;
