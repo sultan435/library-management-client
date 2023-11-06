@@ -1,0 +1,194 @@
+[
+    {
+        "bookName": "To Kill a Mockingbird",
+        "image": "https://i.ibb.co/DRDQ3Yt/travel.jpg",
+        "bookQuantity": 5,
+        "authorName": "Harper Lee",
+        "bookCategory": "Travel",
+        "bookDescription": [
+            "A classic novel that explores the irrationality of adult attitudes towards race and class in the Deep South of the 1930s.",
+            "Features: Classic, Historical, Racial Injustice"
+        ],
+        "rating": 4.8
+    },
+    {
+        "bookName": "The Great Gatsby",
+        "image": "https://i.ibb.co/DRDQ3Yt/travel.jpg",
+        "bookQuantity": 3,
+        "authorName": "F. Scott Fitzgerald",
+        "bookCategory": "Travel",
+        "bookDescription": [
+            "A story of the fabulously wealthy Jay Gatsby and his love for the beautiful Daisy Buchanan, set in the midst of the Roaring Twenties.",
+            "Features: Roaring Twenties, Romance, Wealth"
+        ],
+        "rating": 4.5
+    },
+    {
+        "bookName": "1984",
+        "image": "https://i.ibb.co/DRDQ3Yt/travel.jpg",
+        "bookQuantity": 7,
+        "authorName": "George Orwell",
+        "bookCategory": "Travel",
+        "bookDescription": [
+            "A dystopian social science fiction novel that depicts a totalitarian future society.",
+            "Features: Dystopian, Social Commentary, Totalitarianism"
+        ],
+        "rating": 4.7
+    },
+    {
+        "bookName": "Pride and Prejudice",
+        "image": "https://i.ibb.co/DRDQ3Yt/travel.jpg",
+        "bookQuantity": 4,
+        "authorName": "Jane Austen",
+        "bookCategory": "Travel",
+        "bookDescription": [
+            "A romantic novel of manners, this book explores the themes of love, reputation, and class.",
+            "Features: Romance, Manners, Social Commentary"
+        ],
+        "rating": 4.6
+    },
+    {
+        "bookName": "The Catcher in the Rye",
+        "image": "https://i.ibb.co/YynXcmF/Biographies.png",
+        "bookQuantity": 6,
+        "authorName": "J.D. Salinger",
+        "bookCategory": "Novel",
+        "bookDescription": [
+            "A story about a teenager who is expelled from prep school and decides to run away for a few days.",
+            "Features: Coming of Age, Alienation, Identity"
+        ],
+        "rating": 4.4
+    },
+    {
+        "bookName": "The Hobbit",
+        "image": "https://i.ibb.co/YynXcmF/Biographies.png",
+        "bookQuantity": 5,
+        "authorName": "J.R.R. Tolkien",
+        "bookCategory": "Novel",
+        "bookDescription": [
+            "A fantasy novel about the quest of home-loving hobbit Bilbo Baggins to win a share of the treasure guarded by the dragon, Smaug.",
+            "Features: Adventure, Epic, Quest"
+        ],
+        "rating": 4.9
+    },
+    {
+        "bookName": "The Lord of the Rings",
+        "image": "https://i.ibb.co/YynXcmF/Biographies.png",
+        "bookQuantity": 3,
+        "authorName": "J.R.R. Tolkien",
+        "bookCategory": "Novel",
+        "bookDescription": [
+            "A high-fantasy novel that follows the quest to destroy the One Ring, which gives its wielder the power to enslave the world.",
+            "Features: Adventure, Magic, Friendship"
+        ],
+        "rating": 4.9
+    },
+    {
+        "bookName": "Harry Potter and the Sorcerer's Stone",
+        "image": "https://i.ibb.co/YynXcmF/Biographies.png",
+        "bookQuantity": 8,
+        "authorName": "J.K. Rowling",
+        "bookCategory": "Novel",
+        "bookDescription": [
+            "The first book in the Harry Potter series, following the young wizard Harry Potter and his friends as they attend Hogwarts School of Witchcraft and Wizardry.",
+            "Features: Magic, Friendship, Coming of Age"
+        ],
+        "rating": 4.7
+    },
+    {
+        "bookName": "The Alchemist",
+        "image": "https://i.ibb.co/f1GfpqP/history.jpg",
+        "bookQuantity": 6,
+        "authorName": "Paulo Coelho",
+        "bookCategory": "History",
+        "bookDescription": [
+            "A novel about a young Andalusian shepherd named Santiago and his journey to find the greatest treasure in the world.",
+            "Features: Philosophical, Quest, Fable"
+        ],
+        "rating": 4.6
+    },
+    {
+        "bookName": "The Da Vinci Code",
+        "image": "https://i.ibb.co/f1GfpqP/history.jpg",
+        "bookQuantity": 4,
+        "authorName": "Dan Brown",
+        "bookCategory": "History",
+        "bookDescription": [
+            "A mystery thriller that follows symbologist Robert Langdon and cryptologist Sophie Neveu as they investigate a murder in the Louvre Museum.",
+            "Features: Mystery, Thriller, Conspiracy"
+        ],
+        "rating": 4.3
+    },
+    {
+        "bookName": "Sapiens: A Brief History of Humankind",
+        "image": "https://i.ibb.co/f1GfpqP/history.jpg",
+        "bookQuantity": 3,
+        "authorName": "Yuval Noah Harari",
+        "bookCategory": "History",
+        "bookDescription": [
+            "An exploration of the history of humankind from the emergence of Homo sapiens in the Stone Age up to the present day.",
+            "Features: Anthropology, History, Evolution"
+        ],
+        "rating": 4.8
+    },
+    {
+        "bookName": "The Power of Now: A Guide to Spiritual Enlightenment",
+        "image": "power_now.jpg",
+        "bookQuantity": 5,
+        "authorName": "https://i.ibb.co/f1GfpqP/history.jpg",
+        "bookCategory": "History",
+        "bookDescription": [
+            "A self-help book that aims to bring readers into the present moment to find joy and spiritual enlightenment.",
+            "Features: Spirituality, Self-Help, Mindfulness"
+        ],
+        "rating": 4.7
+    },
+    {
+        "bookName": "Thinking, Fast and Slow",
+        "image": "https://i.ibb.co/z2Qs1dk/History.png",
+        "bookQuantity": 4,
+        "authorName": "Daniel Kahneman",
+        "bookCategory": "Drama",
+        "bookDescription": [
+            "A comprehensive look at the mind and how it makes decisions, exploring the two systems that drive the way we think.",
+            "Features: Psychology, Cognitive Science, Decision Making"
+        ],
+        "rating": 4.5
+    },
+    {
+        "bookName": "A Brief History of Time",
+        "image": "https://i.ibb.co/z2Qs1dk/History.png",
+        "bookQuantity": 4,
+        "authorName": "Stephen Hawking",
+        "bookCategory": "Drama",
+        "bookDescription": [
+            "A popular science book about the history of the universe, from the Big Bang to black holes.",
+            "Features: Cosmology, Physics, Astrophysics"
+        ],
+        "rating": 4.6
+    },
+    {
+        "bookName": "The Subtle Art of Not Giving a F*ck: A Counterintuitive Approach to Living a Good Life",
+        "image": "https://i.ibb.co/z2Qs1dk/History.png",
+        "bookQuantity": 6,
+        "authorName": "Mark Manson",
+        "bookCategory": "Drama",
+        "bookDescription": [
+            "A self-help book that encourages readers to embrace their fears and faults to live a more fulfilled life.",
+            "Features: Self-Help, Motivational, Personal Development"
+        ],
+        "rating": 4.5
+    },
+    {
+        "bookName": "The 7 Habits of Highly Effective People",
+        "image": "https://i.ibb.co/z2Qs1dk/History.png",
+        "bookQuantity": 5,
+        "authorName": "Stephen R. Covey",
+        "bookCategory": "Drama",
+        "bookDescription": [
+            "A self-help book that outlines seven habits for personal and interpersonal effectiveness.",
+            "Features: Self-Help, Productivity, Personal Development"
+        ],
+        "rating": 4.6
+    }
+]

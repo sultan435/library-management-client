@@ -1,0 +1,19 @@
+[
+    {
+        "bookCategory": "Travel",
+        "image": "https://i.ibb.co/DRDQ3Yt/travel.jpg"    
+    },
+    {
+        "bookCategory": "Drama",
+        "image": "https://i.ibb.co/z2Qs1dk/History.png"    
+    },
+    {
+        "bookCategory": "Novel",
+        "image": "https://i.ibb.co/YynXcmF/Biographies.png"     
+    },
+    {
+        "bookCategory": "History",
+        "image": "https://i.ibb.co/f1GfpqP/history.jpg"    
+    }
+
+]
