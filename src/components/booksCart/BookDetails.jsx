@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../hooks/useAuth";
 import useAxios from "../../hooks/useAxios";
 import { useParams } from "react-router-dom";
-import Loading from "../ui/Loading";
 
 
 
@@ -24,7 +23,7 @@ const BookDetails = () => {
         
     })
     if(isLoading){
-        <Loading></Loading>
+        return
     }
 
     console.log(data);
@@ -45,6 +44,9 @@ const BookDetails = () => {
                 refetch()
             }   
         })
+        
+        
+
     };
     return (
         <div className="flex gap-10">

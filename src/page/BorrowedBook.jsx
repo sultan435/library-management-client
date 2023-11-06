@@ -13,14 +13,21 @@ const BorrowedBook = () => {
         return res
     }
 
-    const { data: borrowBooks } = useQuery({
+    const { data: borrowBooks, refetch } = useQuery({
         queryKey: ["borrowBooks"],
         queryFn: getBorrowBooks
     })
     console.log(borrowBooks);
 
-    const handleRemove = (_id) =>{
-        console.log(_id)
+    const handleRemove = (_id, itemId) =>{
+        // console.log(_id)
+        axios.delete(`/user/cancel-borrow/${_id}/${itemId}`)
+        .then(res => {
+            if(res?.data?.deletedCount > 0){
+                alert("deleted success")
+                refetch()
+            }
+        })
     }
 
     return (
@@ -81,7 +88,7 @@ const BorrowedBook = () => {
                                     {book.date.returnDate}
                                 </td>
                                 <td>
-                                <button onClick={()=> handleRemove(book.data._id)} className="btn btn-secondary">Remove</button> 
+                                <button onClick={()=> handleRemove(book._id, book.data._id)} className="btn btn-secondary">Remove</button> 
                                 </td>
                             </tr>
 
