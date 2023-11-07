@@ -42,10 +42,10 @@ const AddBook = () => {
                                     <span className="text-lg pl-1">Category Name</span>
                                 </label>
                                 <select name="categoryName" onBlur={(e)=>setCategoryName(e.target.value)} className="border rounded-lg py-3 px-4 bg-white my-2 w-full">
-                                    <option defaultValue="nike">Novel</option>
-                                    <option defaultValue="adidas">Travel</option>
-                                    <option defaultValue="gucci">Drama</option>
-                                    <option defaultValue="levis">History</option>
+                                    <option defaultValue="Novel">Novel</option>
+                                    <option defaultValue="Travel">Travel</option>
+                                    <option defaultValue="Drama">Drama</option>
+                                    <option defaultValue="History">History</option>
                                 </select>
                             </div>
                         </div>

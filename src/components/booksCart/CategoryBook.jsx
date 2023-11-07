@@ -1,11 +1,14 @@
 import { Link, useLoaderData } from "react-router-dom";
+import Container from "../ui/Container";
 
 
 const CategoryBook = () => {
     const book = useLoaderData()
    
     return (
-      <div className="grid grid-cols-3 gap-6 py-10">
+      <Container>
+          <div className="grid grid-cols-3 gap-6 py-10">
+
           {
             book.map(items => <div key={items._id} className="card bg-base-100 shadow-xl">
             <figure><img className="80" src={items.image } alt="Shoes" /></figure>
@@ -21,6 +24,7 @@ const CategoryBook = () => {
         </div>)
         }
       </div>
+        </Container>
         
     );
 };

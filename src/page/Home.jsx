@@ -5,6 +5,7 @@ import BookCategories from "../components/bookCategories/BookCategories";
 import { useQuery } from "@tanstack/react-query";
 import useAxios from "../hooks/useAxios";
 import Title from "../components/ui/Title";
+import Container from "../components/ui/Container";
 
 
 const Home = () => {
@@ -27,7 +28,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <div>
+            <Container>
                 <Title>Books Categories</Title>
                 <div className="grid grid-cols-4 gap-4 px-4">
 
@@ -36,7 +37,7 @@ const Home = () => {
                     }
                 </div>
 
-            </div>
+            </Container>
             <div className="grid lg:grid-cols-12 grid-cols-1">
                 <div className="lg:col-span-6">
                     <img src={img} alt="" />

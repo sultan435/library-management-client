@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 
 
+
 const BooksCart = ({books}) => {
-  console.log(books);
+  // console.log(books);
   const {image,bookName,bookCategory,bookQuantity,rating,_id} = books
+  
+  
   return (
-    <div>
+    <>
+   
+
       <div className="card bg-base-100 shadow-xl">
             <figure><img className="h-80 w-full" src={image } alt="Shoes" /></figure>
             <div className="card-body">
@@ -18,7 +23,8 @@ const BooksCart = ({books}) => {
                 </div>
             </div>
         </div>
-    </div>
+   
+    </>
   );
 };
 
