@@ -4,6 +4,7 @@ import useAxios from "../../hooks/useAxios";
 import { useQuery } from "@tanstack/react-query";
 import { BsArrowRightShort } from "react-icons/bs";
 import bannerImage from '../../assets/images/banner/c-banner.jpg'
+import Swal from "sweetalert2";
 
 const UpdateBook = () => {
 
@@ -38,7 +39,14 @@ const UpdateBook = () => {
         console.log(book)
 
         axios.put(`/books/book-update/${_id}`, book)
-        .then(res => console.log(res.data))
+        .then(res => {
+            console.log(res.data)
+            Swal.fire({
+                title: "Update!",
+                text: "Book Update Successfully",
+                icon: "success"
+              });
+        })
     }
 
     return (

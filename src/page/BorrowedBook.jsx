@@ -5,6 +5,7 @@ import Container from "../components/ui/Container";
 import bannerBorrow from '../assets/images/banner/c-banner.jpg'
 import { NavLink } from "react-router-dom";
 import { BsArrowRightShort } from "react-icons/bs";
+import Swal from "sweetalert2";
 
 
 
@@ -26,7 +27,11 @@ const BorrowedBook = () => {
         axios.delete(`/user/cancel-borrow/${_id}/${itemId}`)
             .then(res => {
                 if (res?.data?.deletedCount > 0) {
-                    alert("deleted success")
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
+                      });
                     refetch()
                 }
             })
