@@ -29,8 +29,14 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Container>
-                <Title>Books Categories</Title>
-                <div className="grid grid-cols-4 gap-4 px-4">
+                <Title>
+                    <h1>Books Categories</h1>
+                </Title>
+                <div className="text-center text-lg text-gray-700 font-semibold py-4">
+                    <p className="pb-4">Fusce sem dolor, interdum in efficitur at, faucibus nec lorem. Sed nec molestie justo.</p>
+                    <div className="border-2 border-[#e41f05] w-28 rounded-lg mx-auto"></div>
+                </div>
+                <div className="grid grid-cols-4 gap-4 px-4 py-16">
 
                     {
                         categories?.data?.map((items) => <BookCategories key={items._id} category={items}></BookCategories>)
