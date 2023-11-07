@@ -1,32 +1,28 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxios from "../hooks/useAxios";
-// import useAuth from "../hooks/useAuth";
 import Loading from "../components/ui/Loading";
 import BooksCart from "../components/booksCart/BooksCart";
-import { useState } from "react";
+import {  useState } from "react";
 import Container from "../components/ui/Container";
 import banner from '../assets/images/banner/c-banner.jpg'
 import { NavLink } from "react-router-dom";
 import { BsArrowRightShort } from "react-icons/bs";
 
-
-
 const AllBook = () => {
     const axios = useAxios()
     const [bookQuantity, setBookQuantity] = useState('')
-    console.log(bookQuantity)
-
-
+    const [quantity, setQuantity] = useState('')
+   
     const getAllBooks = async () => {
-        const res = await axios.get(`/books?sortField=bookQuantity&sortOrder=${bookQuantity}`)
+        const res = await axios.get(`/books?sortField=bookQuantity&sortOrder=${bookQuantity}&quantity=${quantity}`)
         return res
     }
 
     const { data: books, isLoading } = useQuery({
-        queryKey: ["addBooks", bookQuantity],
+        queryKey: ["addBooks", bookQuantity,quantity],
         queryFn: getAllBooks,
     })
-    // console.log(books?.data);
+    
     if (isLoading) {
         <Loading></Loading>
     }
@@ -56,17 +52,23 @@ const AllBook = () => {
                 </NavLink>
             </div>
             <Container>
-                <div>
-                    <select name="categoryName" onChange={(e) => setBookQuantity(e.target.value)} className="border rounded-lg py-3 px-10 bg-white my-2">
-                        <option disabled selected>Choose one</option>
-                        <option value="asc">From low to high</option>
-                        <option value="desc">From high to low</option>
-                    </select>
+                <div className="flex flex-col  items-center justify-end gap-4 pt-10">
+                    <div className="">
+                        <div><h1 className="text-xl font-semibold mr-3 text-center">SORT</h1></div>
+                        <select name="categoryName" onChange={(e) => setBookQuantity(e.target.value)} className="border rounded-lg py-3 px-10 bg-white my-2">
+                            <option disabled selected>Choose one</option>
+                            <option value="asc">From low to high</option>
+                            <option value="desc">From high to low</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button type="button" onClick={()=>setQuantity("bookQuantity")} className="py-2 px-5 text-white text-lg font-semibold shadow-lg bg-[#e41f05] rounded-lg border border-[#e41f05]">Available book</button>
+                    </div>
                 </div>
-                <div className="grid grid-cols-3 gap-6 py-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6 py-10">
 
                     {
-                        books?.data?.result.map(book => <BooksCart key={book._id} books={book}></BooksCart>)
+                        books?.data?.result?.map(book => <BooksCart key={book._id} books={book}></BooksCart>)
                     }
                 </div>
             </Container>

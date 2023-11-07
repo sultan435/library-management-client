@@ -166,28 +166,48 @@ const Navbar = () => {
                                             className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
                                         >
                                             <NavLink
-                                                to="/user"
-                                                className="px-4 py-2 hover:bg-base-300 rounded-lg"
+                                                to="/"
+                                                className={({ isActive }) =>
+                                                    isActive ? 'text-[#ff3115] font-semibold underline' : ''
+                                                }
                                             >
-                                                Profile
+                                                Home
                                             </NavLink>
                                             <NavLink
-                                                to="/user/orders"
-                                                className="px-4 py-2 hover:bg-base-300 rounded-lg"
+                                                to="/addBook"
+                                                className={({ isActive }) =>
+                                                    isActive ? 'text-[#ff3115] font-semibold underline' : ''
+                                                }
                                             >
-                                                Orders
+                                                Add Book
+                                            </NavLink>
+                                            <NavLink
+                                                to="/allBook"
+                                                className={({ isActive }) =>
+                                                    isActive ? 'text-[#ff3115] font-semibold underline' : ''
+                                                }
+                                            >
+                                                All Book
+                                            </NavLink>
+                                            <NavLink
+                                                to="/borrowed"
+                                                className={({ isActive }) =>
+                                                    isActive ? 'text-[#ff3115] font-semibold underline' : ''
+                                                }
+                                            >
+                                                Borrowed Book
                                             </NavLink>
 
                                             <div
                                                 onClick={logoutUser}
-                                                className="cursor-pointer text-[#76bd42] px-4 py-2 hover:bg-base-300 rounded-lg"
+                                                className="cursor-pointer text-[#ff3115] px-1 py-2 hover:bg-base-300 rounded-lg"
                                             >
                                                 Logout
                                             </div>
                                         </div>
                                     </div>
                                 ) : (
-                                    <NavLink to="/login" className='px-6 py-[10px] bg-[#e41f05] text-white rounded-lg font-medium'>login</NavLink>
+                                    <NavLink to="/login" className='px-6 py-[10px] bg-[#ff3115] text-white rounded-lg font-medium'>login</NavLink>
                                 )}
                             </div>
                         </div>

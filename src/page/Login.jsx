@@ -1,26 +1,67 @@
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { useState } from "react";
+import toast from "react-hot-toast";
+import useAxios from "../hooks/useAxios";
+import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 
 
 const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const {loginUser} = useAuth()
+    const [loginError, setLoginError] = useState('')
+    const [showPassword, setShowPassword] = useState(false)
+    const {loginUser,logoutUser,googleUser} = useAuth()
     const navigate = useNavigate()
+    const axios = useAxios()
 
 
     const handleUserLogin = async (e) =>{
         e.preventDefault()
+        setLoginError("")
 
+        if (password.length < 6) {
+            setLoginError('Must be 6 or more characters')
+            return;
+        }
+        else if (!/[A-Z]/.test(password)) {
+            setLoginError('your password should have at least one uppercase characters')
+            return;
+        }
+        else if ((!/[$@$!%*#?&]/.test(password))) {
+            setLoginError('your password should have at least one symbols characters')
+            return;
+        }
+        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            setLoginError('Invalid email')
+            return;
+        }
+        const toastId = toast.loading('Loading...');
         try{
             const result = await loginUser(email, password)
-            console.log(result.user);
-            navigate('/')
+            const res =await axios.post('/access-token',{email: result.user.email})
+            if(res.data.success){
+                toast.success('Successfully created!', {id: toastId});
+                navigate('/')
+            }else{
+                logoutUser()
+            }
         }
         catch(error){
-            console.log(error);
+            toast.error(error.message, {id: toastId});
         }
+    }
+
+    const handleGoogleLogin = async()=>{
+        const toastId = toast.loading('Loading...');
+       try{
+        await googleUser(email, password)
+        toast.success('Successfully created!', {id: toastId});
+                navigate('/')
+       }
+       catch(error){
+        toast.error(error.message, {id: toastId});
+       }
     }
     return (
         <div>
@@ -48,16 +89,16 @@ const Login = () => {
                                 </label>
                                 <div className="relative">
                                     <input
-                                        // type={showPassword ? "text" : "password"}
-                                        type="password"
+                                        type={showPassword ? "text" : "password"}
+                                      
                                         onBlur={(e)=>setPassword(e.target.value)}
                                         placeholder="Password"
                                         className="border rounded-lg py-3 px-4 bg-white my-2 w-full" required />
-                                    {/* <span className="absolute top-6 right-7" onClick={() => setShowPassword(!showPassword)}> */}
-                                        {/* {
+                                    <span className="absolute top-6 right-7" onClick={() => setShowPassword(!showPassword)}>
+                                        {
                                             showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
-                                        } */}
-                                    {/* </span> */}
+                                        }
+                                    </span>
                                 </div>
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
@@ -69,14 +110,14 @@ const Login = () => {
                         </div>
                     </form>
                     <div className="text-center mt-6">
-                        {/* {
+                        {
                             loginError && <p className="text-red-600">{loginError}</p>
-                        } */}
+                        }
                     </div>
                     <p className="text-center">OR</p>
                     <div className="">
-                        <button  className="btn w-full border-black my-3">
-                            {/* <FaGoogle></FaGoogle> */}
+                        <button onClick={handleGoogleLogin}  className="btn w-full hover:bg-[#ff3115] hover:text-white font-medium border-black my-3">
+                            <FaGoogle></FaGoogle>
                             Sign in with Google
                         </button>
                     </div>

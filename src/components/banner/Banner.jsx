@@ -10,7 +10,7 @@ const Banner = () => {
             <div className="absolute h-full w-full flex items-center justify-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]">
                 <div className='text-white space-y-3 text-center'>
                 <h2 className='text-4xl font-bold uppercase '>Welcome to <br /><span className='text-6xl py-1'>our library</span></h2>
-                    <p className='text-center text-lg text-white font-semibold py-4'>The Library Is A Place For Everyone To Explore The World Of Reading</p>
+                    <p className='text-center text-lg text-white font-semibold py-4'>The Library is a place for everyone to explore the world of reading</p>
                     <div>
                         <button className="bg-[#ff3115] px-8 py-3 rounded-full text-white text-lg font-medium">Learn More</button>
                     </div>
@@ -26,7 +26,7 @@ const Banner = () => {
             <div className="absolute h-full w-full flex items-center justify-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]">
                 <div className='text-white space-y-3 text-center'>
                 <h2 className='text-4xl font-bold uppercase '>Welcome to <br /><span className='text-6xl py-1'>our library</span></h2>
-                <p className='text-center text-lg text-white font-semibold py-4'>The Library Is A Place For Everyone To Explore The World Of Reading</p>
+                <p className='text-center text-lg text-white font-semibold py-4'>The Library is a place for everyone to explore the world of reading</p>
                     <div>
                         <button className="bg-[#ff3115] px-8 py-3 rounded-full text-white text-lg font-medium">Learn More</button>
                     </div>
@@ -42,7 +42,7 @@ const Banner = () => {
             <div className="absolute h-full w-full flex items-center justify-center bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]">
                 <div className='text-white space-y-3 text-center'>
                 <h2 className='text-4xl font-bold uppercase '>Welcome to <br /><span className='text-6xl py-1'>our library</span></h2>
-                <p className='text-center text-lg text-white font-semibold py-4'>The Library Is A Place For Everyone To Explore The World Of Reading</p>
+                <p className='text-center text-lg text-white font-semibold py-4'>The Library is a place for everyone to explore the world of reading</p>
                     <div>
                         <button className="bg-[#ff3115] px-8 py-3 rounded-full text-white text-lg font-medium">Learn More</button>
                     </div>

@@ -27,7 +27,7 @@ const Home = () => {
                     <h1>Books Categories</h1>
                 </Title>
                 <div className="text-center text-lg text-gray-700 font-semibold py-4">
-                    <p className="pb-4">Fusce sem dolor, interdum in efficitur at, faucibus nec lorem. Sed nec molestie justo.</p>
+                    <p className="pb-4">The Library is a place for everyone to explore the world of reading</p>
                     <div className="border-2 border-[#e41f05] w-28 rounded-lg mx-auto"></div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6 px-4 py-16">

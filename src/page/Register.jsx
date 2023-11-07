@@ -1,28 +1,63 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import Swal from "sweetalert2";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
+    const [registerError, setRegisterError] = useState('')
+    const [success, setSuccess] = useState('')
+    const [showPassword, setShowPassword] = useState(false)
+
     const [name, setName] = useState('')
     const [photo, setPhoto] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const {createUser} = useAuth()
+    const { createUser } = useAuth()
     const navigate = useNavigate()
 
-    const handleUserRegister = async (e) =>{
+    const handleUserRegister = async (e) => {
         e.preventDefault()
-        console.log(name,photo,email,password)
 
-        try{
+        setRegisterError("")
+        setSuccess("")
+
+        if (password.length < 6) {
+            setRegisterError('Must be 6 or more characters')
+            return;
+        }
+        else if (!/[A-Z]/.test(password)) {
+            setRegisterError('your password should have at least one uppercase characters')
+            return;
+        }
+        else if ((!/[$@$!%*#?&]/.test(password))) {
+            setRegisterError('your password should have at least one symbols characters')
+            return;
+        }
+
+        try {
             const result = await createUser(email, password)
             console.log(result.user);
+            setSuccess('user created successfully')
+            Swal.fire({
+                title: "success!",
+                text: "You clicked the button!",
+                icon: "success"
+            });
+            updateProfile(result.user, {
+                displayName: name,
+                photoURL: photo,
+            })
+                .then(() => console.log("profile update"))
+                .catch()
             navigate('/')
         }
-         catch(error){
+        catch (error) {
             console.log(error);
-         }
+            setRegisterError('Email already in used')
+        }
     }
     return (
         <div>
@@ -39,9 +74,9 @@ const Register = () => {
                                 </label>
                                 <input
                                     type="text"
-                                    onBlur={(e)=>setName(e.target.value)}
+                                    onBlur={(e) => setName(e.target.value)}
                                     placeholder="Your Name"
-                                    className="border rounded-lg py-3 px-4 bg-white my-2 w-full" 
+                                    className="border rounded-lg py-3 px-4 bg-white my-2 w-full"
                                     required />
                             </div>
                             <div className="">
@@ -50,7 +85,7 @@ const Register = () => {
                                 </label>
                                 <input
                                     type="text"
-                                    onBlur={(e)=>setPhoto(e.target.value)}
+                                    onBlur={(e) => setPhoto(e.target.value)}
                                     placeholder="Photo URL"
                                     className="border rounded-lg py-3 px-4 bg-white my-2 w-full" />
                             </div>
@@ -60,7 +95,7 @@ const Register = () => {
                                 </label>
                                 <input
                                     type="email"
-                                    onBlur={(e)=>setEmail(e.target.value)}
+                                    onBlur={(e) => setEmail(e.target.value)}
                                     placeholder="Email"
                                     className="border rounded-lg py-3 px-4 bg-white my-2 w-full" required />
                             </div>
@@ -70,20 +105,19 @@ const Register = () => {
                                 </label>
                                 <div className="relative">
                                     <input
-                                        // type={showPassword ? "text" : "password"}
-                                        type="password"
-                                        onBlur={(e)=>setPassword(e.target.value)}
+                                        type={showPassword ? "text" : "password"}
+                                        onBlur={(e) => setPassword(e.target.value)}
                                         placeholder="Password"
                                         className="border rounded-lg py-3 px-4 bg-white my-2 w-full" required />
-                                    {/* <span className="absolute top-6 right-7" onClick={() => setShowPassword(!showPassword)}>
+                                    <span className="absolute top-6 right-7" onClick={() => setShowPassword(!showPassword)}>
                                         {
                                             showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
                                         }
-                                    </span> */}
+                                    </span>
                                 </div>
-                                {/* {
+                                {
                                     registerError && <p className="text-red-600 font-medium">{registerError}</p>
-                                } */}
+                                }
                                 <div className="my-5">
                                     <input className="ml-2" type="checkbox" name="terms" id="" />
                                     <label >
@@ -92,14 +126,14 @@ const Register = () => {
                                 </div>
                             </div>
                             <div className="form-control">
-                                <input type="submit" className="rounded-xl text-white text-xl font-medium bg-[#76bd42] py-3 px-6" value="REGISTER" />
+                                <input type="submit" className="rounded-xl text-white text-xl cursor-pointer font-medium bg-[#76bd42] py-3 px-6" value="REGISTER" />
                             </div>
-                            {/* {
+                            {
                                 success && <p className="text-green-600 font-medium">{success}</p>
-                            } */}
+                            }
                         </div>
                     </form>
-                    <p className="mt-7 text-center text-[#403F3F] font-semibold">Have already an account ? <Link className="text-[#76bd42]" to="/login">Login</Link></p>
+                    <p className="mt-7 text-center text-[#403F3F] font-semibold">Have already an account ? <Link className="text-[#ff3115]" to="/login">Login</Link></p>
                 </div>
             </div>
         </div>
