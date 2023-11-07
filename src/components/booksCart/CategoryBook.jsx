@@ -4,13 +4,13 @@ import banner from '../../assets/images/banner/c-banner.jpg'
 import { BsArrowRightShort } from "react-icons/bs";
 
 
+
 const CategoryBook = () => {
     const book = useLoaderData()
 
     return (
         <div>
             <div className="hero h-[350px]" style={{ backgroundImage: `url(${banner})` }}>
-                {/* <div className="hero-overlay bg-opacity-60"></div> */}
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md">
                         <h1 className="mb-8 text-5xl font-bold text-black ">Category Books</h1>
@@ -34,7 +34,7 @@ const CategoryBook = () => {
                 </NavLink>
             </div>
             <Container>
-                <div className="grid grid-cols-3 gap-6 mb-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6 mb-20">
                     {
                         book.map(items => <div key={items._id} className="bg-slate-100 shadow-xl p-8 rounded-lg hover:-translate-y-2 overflow-hidden transition duration-200">
                             <figure><img className="h-72 w-full object-cover rounded-lg shadow-lg " src={items.image} alt="Shoes" /></figure>

@@ -4,7 +4,10 @@ import useAxios from "../../hooks/useAxios";
 import { NavLink, useParams } from "react-router-dom";
 import Container from "../ui/Container";
 import bannerImg from "../../assets/images/banner/c-banner.jpg"
-import { BsArrowRightShort } from "react-icons/bs";
+
+import { BsFacebook,BsArrowRightShort, BsPinterest } from "react-icons/bs";
+import { AiFillTwitterCircle, AiOutlineInstagram } from "react-icons/ai";
+
 
 
 
@@ -70,24 +73,28 @@ const BookDetails = () => {
                 </NavLink>
                 <BsArrowRightShort className="text-2xl mx-1" />
                 <NavLink
-                    to="/addBook"
+                    to="/borrowed"
                     className="hover:text-[#e41f05] font-medium uppercase"
                 >
-                    Add Book
+                    Borrow Book
                 </NavLink>
             </div>
             <Container>
-                <div className="flex gap-10">
-                    <img src={data.image} alt="" />
-                    <div>
-                        <h1>Book Name: {data.bookName}</h1>
-                        <h2>Category: {data.bookCategory}</h2>
-                        <p>Author Name: {data.authorName}</p>
-                        <p>Quantity: {data.bookQuantity}</p>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
+                    <div className="col-span-1 px-20 py-10 bg-slate-100">
+                        <img className="w-full h-[450px] rounded-lg" src={data.image} alt="" />
+                    </div>
+                    <div className="">
+                        <h1 className="text-5xl font-semibold">{data.bookName}</h1>
+                        <p className="text-2xl font-medium my-5">{data.authorName}</p>
+                        <p className="text-gray-500 font-medium mb-4">{data.bookDescription}</p>
+                        <div className="border mb-10"></div>
+                        <h2 className="text-[#e41f05]">Categories: {data.bookCategory}</h2>
+                        <p className="font-normal my-2 hover:text-[#e41f05]">Quantity: {data.bookQuantity}</p>
                         <p>Rating: {data.rating}</p>
                         <div className="mt-5">
-                            <button className="px-4 py-3 bg-[#e41f05] text-white rounded-lg font-medium mr-4">Read More</button>
-                            <button disabled={data.bookQuantity === 0} className="px-4 py-3 bg-[#e41f05] text-white rounded-lg font-medium" onClick={() => document.getElementById('my_modal_5').showModal()}>Borrow</button>
+
+                            <button disabled={data.bookQuantity === 0} className="px-3 lg:px-5 py-2 rounded-lg lg:py-7 bg-[#ff3115] hover:-translate-x-2 overflow-hidden transition duration-200 hover:bg-[#e41f05]  cursor-pointer text-2xl text-white font-medium" onClick={() => document.getElementById('my_modal_5').showModal()}>Borrowed Book</button>
                             <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
                                 <div className="modal-box">
                                     <form onSubmit={handleBorrow}>
@@ -104,6 +111,17 @@ const BookDetails = () => {
                                     </form>
                                 </div>
                             </dialog>
+                            <button className="px-3 lg:px-5 py-2 rounded-lg lg:py-7 bg-[#ff3115] hover:bg-[#e41f05] hover:translate-x-2 overflow-hidden transition duration-200 text-2xl cursor-pointer text-white font-medium ml-4">Read More</button>
+                            <div className="border my-10"></div>
+                            <div>
+                                <h3 className="font-medium mb-1">Share</h3>
+                                <div className='flex items-center mb-2 md:mb-0 gap-3'>
+                                    <span className='cursor-pointer hover:text-[#e41f05]'><BsFacebook /></span>
+                                    <span className='cursor-pointer hover:text-[#e41f05]'><AiFillTwitterCircle /></span>
+                                    <span className='cursor-pointer hover:text-[#e41f05]'><BsPinterest /></span>
+                                    <span className='text-xl cursor-pointer hover:text-[#e41f05]'><AiOutlineInstagram /></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

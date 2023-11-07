@@ -15,8 +15,8 @@ const BookCategories = ({ category }) => {
                             <button className="py-3 px-4 text-white text-xl  border-2 shadow-lg border-[#e41f05] rounded-full">See Books</button>
                         </Link>
                     </div>
-                </div>
-                <p className="text-black font-semibold text-xl my-4 text-center hover:text-[#e41f05]">{bookCategory}</p>
+                </div>              
+                <p className="text-black font-semibold text-xl my-4 text-center hover:text-[#e41f05]">{bookCategory}</p>            
             </div>
       
     );
