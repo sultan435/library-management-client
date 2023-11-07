@@ -15,16 +15,10 @@ const Home = () => {
         const res = await axios.get('/categories')
         return res;
     };
-
     const { data: categories } = useQuery({
         queryKey: ["category"],
         queryFn: getCategories,
     })
-    // console.log(categories);
-
-    // if (isLoading) {
-    //     <p>loading...</p>
-    // }
     return (
         <div>
             <Banner></Banner>
@@ -36,7 +30,7 @@ const Home = () => {
                     <p className="pb-4">Fusce sem dolor, interdum in efficitur at, faucibus nec lorem. Sed nec molestie justo.</p>
                     <div className="border-2 border-[#e41f05] w-28 rounded-lg mx-auto"></div>
                 </div>
-                <div className="grid grid-cols-4 gap-4 px-4 py-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6 px-4 py-16">
 
                     {
                         categories?.data?.map((items) => <BookCategories key={items._id} category={items}></BookCategories>)
@@ -44,21 +38,21 @@ const Home = () => {
                 </div>
 
             </Container>
-            <div className="grid lg:grid-cols-12 grid-cols-1">
-                <div className="lg:col-span-6">
-                    <img src={img} alt="" />
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-6">
+                <div className="col-span-3">
+                    <img className="h-full" src={img} alt="" />
                 </div>
-                <div className="lg:col-span-4 flex flex-col justify-center px-8 space-y-8">
-                    <h1 className="text-4xl font-bold ">Join Our Readership Community</h1>
-                    <p className="font-medium text-gray-500">We are always glad to welcome new library members to our community, which unites writers, poets, readers, and book enthusiasts.</p>
+                <div className="col-span-1 lg:col-span-2 flex flex-col justify-center items-center lg:justify-start lg:items-start space-y-8 py-16 lg:ml-6">
+                    <h1 className="text-4xl font-bold text-center lg:text-left">A Few Words About <br />Our Library</h1>
+                    <p className="font-medium text-gray-500 text-center lg:text-left">Libumo Library was founded in 1980 to provide access to books, the world’s most valuable source of knowledge</p>
                     <div className="flex">
-                        <button className="bg-[#76bd42] hover:bg-[#80c74c] px-10 py-5 text-white font-semibold">READ MORE</button>
-                        <button className="bg-[#80c74c] hover:bg-[#76bd42] px-5 py-3">
+                        <button className="bg-[#ff3115] px-10 py-5 text-white font-semibold">READ MORE</button>
+                        <button className="bg-[#aa200d] px-5 py-3">
                             <GrNext className="text-2xl text-white" />
                         </button>
                     </div>
                 </div>
-                <div className="lg:col-span-2 bg-[#2a2a2a] grid grid-rows-3">
+                <div className="hidden lg:col-span-1 bg-[#2a2a2a] lg:grid grid-rows-3">
                     <div className="flex items-center justify-center hover:bg-[#414141]">
                         <span className="text-white"><a href="">ABOUT US</a></span>
                     </div>
