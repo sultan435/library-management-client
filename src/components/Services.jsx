@@ -9,7 +9,7 @@ import Container from "./ui/Container";
 const Services = () => {
     return (
         <Container>
-            <div className="pt-6 mb-16">
+            <div className="pt-6">
                 <Title>
                     <h1>Services</h1>
                 </Title>
