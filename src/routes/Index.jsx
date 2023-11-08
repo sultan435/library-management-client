@@ -12,15 +12,17 @@ import AllBook from "../page/AllBook";
 import CategoryBook from "../components/booksCart/CategoryBook";
 import UpdateBook from "../components/booksCart/UpdateBook";
 import BookReadMore from "../components/booksCart/BookReadMore";
+import Error from "../page/Error";
 
 const routes = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout/>,
+        errorElement:<Error/>,
         children: [
             {
                 index: true,
-                element: <Home />,
+                element: <Home />
             },
             {
                 path: 'addBook',

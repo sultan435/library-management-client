@@ -116,7 +116,7 @@ const BorrowedBook = () => {
                                             {book.date.returnDate}
                                         </td>
                                         <td>
-                                            <button onClick={() => handleRemove(book._id, book.data._id)} className="bg-[#ff3115] px-4 py-2 rounded-lg text-white text-lg font-medium">Remove</button>
+                                            <button onClick={() => handleRemove(book._id, book.data._id)} className="bg-[#ff3115] px-4 py-2 rounded-lg text-white text-lg font-medium">Return</button>
                                         </td>
                                     </tr>
 

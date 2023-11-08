@@ -26,7 +26,7 @@ const Services = () => {
                         <img className=" rounded-lg w-full h-[250px] bg-cover object-cover" src={image3} alt="" />
                         <div className="text-center pt-4">
                             <h2 className="text-2xl text-gray-800 font-semibold mb-2">Book Rentals</h2>
-                            <p className="text-gray-700 mb-3">Apart from reading inside the library, we also provide facility t rent and return the books in time</p>
+                            <p className="text-gray-700 mb-3">Apart from reading inside the library, sound proof we also provide facility t rent and return the books in time</p>
                             <button className="py-3 px-6 text-white text-xl font-medium  border-2 shadow-lg bg-[#e41f05] rounded-full">Learn</button>
                         </div>
                     </div>
@@ -34,7 +34,7 @@ const Services = () => {
                         <img className=" rounded-lg w-full h-[250px] bg-cover object-cover" src={image2} alt="" />
                         <div className="text-center pt-4">
                             <h2 className="text-2xl text-gray-800 font-semibold mb-2">Infrastructure</h2>
-                            <p className="text-gray-700 mb-3">Modern infrestructure,  sound proof, state-of-the-art classrooms that foster lreaning</p>
+                            <p className="text-gray-700 mb-3">Modern infrestructure,library,  sound proof, state-of-the-art classrooms that foster lreaning</p>
                             <button className="py-3 px-6 text-white text-xl font-medium  border-2 shadow-lg bg-[#e41f05] rounded-full">Learn</button>
                         </div>
                     </div>
