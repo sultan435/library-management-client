@@ -5,7 +5,7 @@ import Container from "../components/ui/Container";
 const About = () => {
     return (
         <Container>
-            <div className="grid grid-cols-2 py-16 mb-4 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 py-16 mb-4 gap-5">
                 <div >
                     <Title>
                         <h1>About Us</h1>

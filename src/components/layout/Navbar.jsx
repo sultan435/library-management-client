@@ -164,7 +164,9 @@ const Navbar = () => {
                                         <div
                                             tabIndex={0}
                                             className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+                                            
                                         >
+                                            <p className=" text-base lg:text-lg font-medium text-center">{user.displayName}</p>
                                             <NavLink
                                                 to="/"
                                                 className={({ isActive }) =>
