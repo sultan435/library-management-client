@@ -16,7 +16,7 @@ const AddBook = () => {
             bookCategory: form.bookCategory?.value || "not-Given",
             authorName: form.authorName?.value || "not-Given",
             bookQuantity: form.bookQuantity?.value || "not-Given",
-            image: form.bookImage?.value || "not-Given",
+            image: form.image?.value || "not-Given",
             rating: form.rating?.value || "not-Given",
             bookDescription: form.bookDescription?.value || "not-Given",    
         }
@@ -78,7 +78,7 @@ const AddBook = () => {
                                 </label>
                                 <select name="bookCategory"  className="border rounded-lg py-3 px-4 shadow-md bg-white my-2 w-full">
                                     <option disabled selected>Choose one</option>
-                                    <option defaultValue="Novel">Novel</option>
+                                    <option defaultValue="Novel">Comic</option>
                                     <option defaultValue="Travel">Travel</option>
                                     <option defaultValue="Drama">Drama</option>
                                     <option defaultValue="History">History</option>
@@ -109,7 +109,7 @@ const AddBook = () => {
                                     <span className=" text-lg pl-1">Book Image</span>
                                 </label>
                                 <label>
-                                    <input type="text" name='bookImage' placeholder="Enter Image Url" className="border shadow-md rounded-lg py-3 px-4 bg-white my-2 w-full" />
+                                    <input type="text" name='image' placeholder="Enter Image Url" className="border shadow-md rounded-lg py-3 px-4 bg-white my-2 w-full" />
                                 </label>
                             </div>
                             <div className='md:w-1/2 lg:w-1/2'>

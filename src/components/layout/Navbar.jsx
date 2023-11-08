@@ -21,7 +21,7 @@ const Navbar = () => {
                         </div>
                         <div className='flex items-center gap-2'>
                             <span><AiOutlineMail className='text-[#e41f05]' /></span>
-                            <p><span className='cursor-pointer hover:text-[#e41f05]'>sultan@email.com</span></p>
+                            <p><span className='cursor-pointer hover:text-[#e41f05]'>support@rstheme.com</span></p>
                         </div>
                     </div>
                     <div className='flex items-center flex-col-reverse md:flex-row md:gap-6'>

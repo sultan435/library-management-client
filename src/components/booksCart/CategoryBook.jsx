@@ -13,7 +13,7 @@ const CategoryBook = () => {
             <div className="hero h-[350px]" style={{ backgroundImage: `url(${banner})` }}>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md">
-                        <h1 className="mb-8 text-5xl font-bold text-black ">Category Books</h1>
+                        <h1 className="mb-8 text-5xl font-bold text-black ">Category <span className="text-[#e41f05]">Books</span></h1>
                         <div className="border-2 border-[#e41f05] w-24 rounded-lg mx-auto"></div>
                     </div>
                 </div>

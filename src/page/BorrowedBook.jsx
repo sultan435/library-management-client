@@ -63,7 +63,7 @@ const BorrowedBook = () => {
                 </NavLink>
             </div>
             <Container>         
-                    <div className="overflow-x-auto py-16">
+                    <div className="overflow-x-auto py-16 ">
                         <table className="table">
                             {/* head */}
                             <thead>
@@ -82,7 +82,7 @@ const BorrowedBook = () => {
                                     <th>Status</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody >
                                 {
                                     borrowBooks?.data?.map((book) => <tr key={book._id}>
                                         <th>

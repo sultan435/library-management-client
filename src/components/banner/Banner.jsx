@@ -1,6 +1,6 @@
-import img1 from '../../assets/images/banner/slide-1-1697x605.jpg'
-import img2 from '../../assets/images/banner/slide-2-1697x605.jpg'
-import img3 from '../../assets/images/banner/slide-3-1697x605.jpg'
+import img1 from '../../assets/images/banner/banner-1.jpg'
+import img2 from '../../assets/images/banner/banner-2.jpg'
+import img3 from '../../assets/images/banner/banner-3.jpg'
 
 const Banner = () => {
     return (

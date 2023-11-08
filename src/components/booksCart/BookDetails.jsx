@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../hooks/useAuth";
 import useAxios from "../../hooks/useAxios";
-import { NavLink, useParams } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 import Container from "../ui/Container";
 import bannerImg from "../../assets/images/banner/c-banner.jpg"
 
@@ -23,7 +23,7 @@ const BookDetails = () => {
     const { data, isLoading, refetch } = useQuery({
         queryKey: ["book"],
         queryFn: async () => {
-            const data = await fetch(`http://localhost:5000/api/v1/book/${params.id}`)
+            const data = await fetch(`https://library-management-server-gamma.vercel.app/api/v1/book/${params.id}`)
             return await data.json();
         }
 
@@ -59,7 +59,7 @@ const BookDetails = () => {
             <div className="hero h-[350px]" style={{ backgroundImage: `url(${bannerImg})` }}>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md">
-                        <h1 className="mb-8 text-5xl font-bold text-black ">Single Books</h1>
+                        <h1 className="mb-8 text-5xl font-bold text-black ">Single <span className="text-[#e41f05]">Book</span></h1>
                         <div className="border-2 border-[#e41f05] w-24 rounded-lg mx-auto"></div>
                     </div>
                 </div>
@@ -82,12 +82,12 @@ const BookDetails = () => {
             <Container>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
                     <div className="col-span-1 px-20 py-10 bg-slate-100">
-                        <img className="w-full h-[450px] rounded-lg" src={data.image} alt="" />
+                        <img className="w-full h-[500px] rounded-lg" src={data.image} alt="" />
                     </div>
                     <div className="">
                         <h1 className="text-5xl font-semibold">{data.bookName}</h1>
-                        <p className="text-2xl font-medium my-5">{data.authorName}</p>
-                        <p className="text-gray-500 font-medium mb-4">{data.bookDescription}</p>
+                        <p className="text-2xl font-medium my-5">by <span className="text-[#e41f05]">{data.authorName}</span></p>
+                        <p className="text-gray-500 font-medium mb-4">{data.bookDescription.slice(3, 200)}</p>
                         <div className="border mb-10"></div>
                         <h2 className="text-[#e41f05]">Categories: {data.bookCategory}</h2>
                         <p className="font-normal my-2 hover:text-[#e41f05]">Quantity: {data.bookQuantity}</p>
@@ -111,7 +111,9 @@ const BookDetails = () => {
                                     </form>
                                 </div>
                             </dialog>
+                            <Link to={`/book-readMore/${data._id}`}>
                             <button className="px-3 lg:px-5 py-2 rounded-lg lg:py-7 bg-[#ff3115] hover:bg-[#e41f05] hover:translate-x-2 overflow-hidden transition duration-200 text-2xl cursor-pointer text-white font-medium ml-4">Read More</button>
+                            </Link>
                             <div className="border my-10"></div>
                             <div>
                                 <h3 className="font-medium mb-1">Share</h3>

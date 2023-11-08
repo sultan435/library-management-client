@@ -1,9 +1,10 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import useAxios from "../hooks/useAxios";
 import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
+import img from '../assets/images/banner/c-banner.jpg'
 
 
 const Login = () => {
@@ -13,6 +14,7 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false)
     const {loginUser,logoutUser,googleUser} = useAuth()
     const navigate = useNavigate()
+    const location = useLocation()
     const axios = useAxios()
 
 
@@ -42,7 +44,7 @@ const Login = () => {
             const res =await axios.post('/access-token',{email: result.user.email})
             if(res.data.success){
                 toast.success('Successfully created!', {id: toastId});
-                navigate('/')
+                navigate(location?.state ? location.state : "/")
             }else{
                 logoutUser()
             }
@@ -57,7 +59,7 @@ const Login = () => {
        try{
         await googleUser(email, password)
         toast.success('Successfully created!', {id: toastId});
-                navigate('/')
+        navigate(location?.state ? location.state : "/")
        }
        catch(error){
         toast.error(error.message, {id: toastId});
@@ -65,8 +67,24 @@ const Login = () => {
     }
     return (
         <div>
-            <div className="bg-[#f2f2f2] py-24">
-                <div className="md:w-3/4 lg:w-1/2 mx-auto bg-white px-4 md:px-10 lg:px-12 py-16 rounded-lg">
+             <div className="hero h-[350px]" style={{ backgroundImage: `url(${img})` }}>
+                <div className="hero-content text-center text-neutral-content">
+                    <div className="max-w-md">
+                        <h1 className="mb-8 text-5xl font-bold text-black "><span className="text-[#e41f05]">Login</span> Account</h1>
+                        <div className="border-2 border-[#e41f05] w-24 rounded-lg mx-auto"></div>
+                    </div>
+                </div>
+            </div>
+            <div className="bg-slate-100 py-5 flex justify-center items-center mb-16">
+                <NavLink
+                    to="/"
+                    className="hover:text-[#e41f05] font-medium uppercase"
+                >
+                    Home
+                </NavLink>
+            </div>
+            <div className=" py-3">
+                <div className="md:w-3/4 lg:w-1/2 mx-auto shadow-lg bg-gray-200 px-4 md:px-10 lg:px-12 py-14 mb-16 rounded-lg">
                     <div className="text-center mb-12">
                         <h1 className="text-4xl text-[#403F3F] font-semibold">LOGIN</h1>
                     </div>

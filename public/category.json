@@ -1,19 +1,19 @@
 [
     {
         "bookCategory": "Travel",
-        "image": "https://i.ibb.co/DRDQ3Yt/travel.jpg"    
+        "image": "https://i.ibb.co/56m1xFG/travel-1.jpg"    
     },
     {
         "bookCategory": "Drama",
-        "image": "https://i.ibb.co/z2Qs1dk/History.png"    
+        "image": "https://i.ibb.co/qsbyqpv/drama.jpg"    
     },
     {
-        "bookCategory": "Novel",
-        "image": "https://i.ibb.co/YynXcmF/Biographies.png"     
+        "bookCategory": "Comic",
+        "image": "https://i.ibb.co/pQC57Tg/comicc.jpg"     
     },
     {
         "bookCategory": "History",
-        "image": "https://i.ibb.co/f1GfpqP/history.jpg"    
+        "image": "https://i.ibb.co/0jnGpMC/history-2.jpg"    
     }
 
 ]

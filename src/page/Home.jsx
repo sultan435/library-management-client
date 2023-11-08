@@ -6,6 +6,8 @@ import { useQuery } from "@tanstack/react-query";
 import useAxios from "../hooks/useAxios";
 import Title from "../components/ui/Title";
 import Container from "../components/ui/Container";
+import About from "./About";
+import Services from "../components/Services";
 
 
 const Home = () => {
@@ -64,6 +66,8 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <Services></Services>
+            <About></About>
         </div>
     );
 };

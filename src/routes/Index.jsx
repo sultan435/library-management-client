@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import AllBook from "../page/AllBook";
 import CategoryBook from "../components/booksCart/CategoryBook";
 import UpdateBook from "../components/booksCart/UpdateBook";
+import BookReadMore from "../components/booksCart/BookReadMore";
 
 const routes = createBrowserRouter([
     {
@@ -36,19 +37,21 @@ const routes = createBrowserRouter([
             {
                 path: 'bookCart/:bookCategory',
                 element: <PrivateRoute><CategoryBook/></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/api/v1/books/${params.bookCategory}`)
+                loader: ({params})=> fetch(`https://library-management-server-gamma.vercel.app/api/v1/books/${params.bookCategory}`)
             },
             {
                 path: 'book-details/:id',
                 element:<PrivateRoute><BookDetails></BookDetails></PrivateRoute>
-                // loader: ({params})=> fetch(`http://localhost:5000/api/v1/book/${params.id}`)
             },
             {
                 path: 'book-update/:id',
-                element:<UpdateBook></UpdateBook>,
-                loader: ({params})=> fetch(`http://localhost:5000/api/v1/book/${params.id}`)
-            }
-
+                element:<PrivateRoute><UpdateBook></UpdateBook></PrivateRoute>,
+                loader: ({params})=> fetch(`https://library-management-server-gamma.vercel.app/api/v1/book/${params.id}`)
+            },
+            {
+                path: 'book-readMore/:id',
+                element:<PrivateRoute><BookReadMore></BookReadMore></PrivateRoute>,
+            },
         ],
     },
     {
