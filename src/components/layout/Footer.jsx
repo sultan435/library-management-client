@@ -9,8 +9,8 @@ import new2 from '../../assets/images/post-2.jpg'
 const Footer = () => {
     return (
         <div className="bg-[#2a2a2a]">
-            <Container> 
-               
+            <Container>
+
                 <div className="flex justify-start items-start flex-col md:flex-row md:items-start md:justify-between space-y-10 md:space-y-0  py-20">
                     <div>
                         <h3 className="text-2xl text-white font-bold hover:text-[#ff3115] mb-2">Get In Touch</h3>
@@ -62,7 +62,7 @@ const Footer = () => {
                                             <button className="bg-[#ff3115] px-5 py-3">
                                                 <FaRegPaperPlane className="text-2xl text-white" />
                                             </button>
-                                        </div>                              
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -72,8 +72,8 @@ const Footer = () => {
                         <div className="flex items-center mb-7">
                             <img className="w-14" src={img} alt="" />
                             <div className="flex flex-col items-start">
-                                <p className="text-2xl font-bold text-[#ff3115]">Libuno</p>
-                                <span className="text-xs text-gray-500 font-medium">PUBLIC LIBRARY</span>
+                                <span className="text-xl text-white font-bold">PUBLIC LIBRARY</span>
+                                <p className=" text-[#e41f05] font-medium">Scientia</p>
                             </div>
                         </div>
                         <div>
@@ -82,16 +82,16 @@ const Footer = () => {
                             </div>
                             <div className="flex gap-10 mb-14">
                                 <div className="text-white space-y-3 text-sm list-none">
-                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight/ ></span>ABOUT US</li>
-                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight/ ></span>SERVICES</li>
-                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight/ ></span>OUT TEAM</li>
-                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight/ ></span>PROJECTS</li>
+                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight /></span>ABOUT US</li>
+                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight /></span>SERVICES</li>
+                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight /></span>OUT TEAM</li>
+                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight /></span>PROJECTS</li>
                                 </div>
                                 <div className="text-white text-sm space-y-3 list-none">
-                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight/ ></span>NEWS</li>
-                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight/ ></span>CONTACTS</li>
-                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight/ ></span>FAQ</li>
-                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight/ ></span>SHOP</li>
+                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight /></span>NEWS</li>
+                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight /></span>CONTACTS</li>
+                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight /></span>FAQ</li>
+                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight /></span>SHOP</li>
                                 </div>
 
                             </div>

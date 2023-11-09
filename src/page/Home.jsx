@@ -8,7 +8,7 @@ import Title from "../components/ui/Title";
 import Container from "../components/ui/Container";
 import About from "./About";
 import Services from "../components/Services";
-import Contact from "../components/Contact";
+import Donation from "../components/Donation";
 
 
 const Home = () => {
@@ -69,7 +69,7 @@ const Home = () => {
             </div>
             <Services></Services>
             <About></About>
-            <Contact></Contact>
+            <Donation></Donation>
         </div>
     );
 };

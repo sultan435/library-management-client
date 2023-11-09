@@ -101,8 +101,8 @@ const Navbar = () => {
                                 <div className="flex items-center">
                                     <img className="w-14" src={logo} alt="" />
                                     <div className="flex flex-col items-start">
-                                        <p className="text-xl font-bold text-[#e41f05]">Libuno</p>
-                                        <span className="text-xs">PUBLIC LIBRARY</span>
+                                        <span className="text-xl font-bold">PUBLIC LIBRARY</span>
+                                        <p className=" text-[#e41f05] font-medium">Scientia</p>
                                     </div>
                                 </div>
                             </NavLink>

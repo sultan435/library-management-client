@@ -39,7 +39,7 @@ const routes = createBrowserRouter([
             {
                 path: 'bookCart/:bookCategory',
                 element: <PrivateRoute><CategoryBook/></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/api/v1/books/${params.bookCategory}`)
+                loader: ({params})=> fetch(`https://library-management-server-gamma.vercel.app/api/v1/books/${params.bookCategory}`)
             },
             {
                 path: 'book-details/:id',
@@ -48,7 +48,7 @@ const routes = createBrowserRouter([
             {
                 path: 'book-update/:id',
                 element:<PrivateRoute><UpdateBook></UpdateBook></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/api/v1/book/${params.id}`)
+                loader: ({params})=> fetch(`https://library-management-server-gamma.vercel.app/api/v1/book/${params.id}`)
             },
             {
                 path: 'book-readMore/:id',

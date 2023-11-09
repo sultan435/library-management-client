@@ -23,7 +23,7 @@ const BookDetails = () => {
     const { data, isLoading, refetch } = useQuery({
         queryKey: ["book"],
         queryFn: async () => {
-            const data = await fetch(`http://localhost:5000/api/v1/book/${params.id}`)
+            const data = await fetch(`https://library-management-server-gamma.vercel.app/api/v1/book/${params.id}`)
             return await data.json();
         }
 

@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 
+
 const BooksCart = ({ books }) => {
- 
+
   const { image, bookName, bookCategory, bookQuantity, rating, _id } = books
 
   return (
