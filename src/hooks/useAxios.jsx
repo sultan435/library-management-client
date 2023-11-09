@@ -2,8 +2,8 @@ import axios from "axios";
 import useAuth from "./useAuth";
 
 const instance = axios.create({
-    // baseURL: 'https://library-management-server-gamma.vercel.app/api/v1',
-    baseURL: 'https://library-management-server-gamma.vercel.app/api/v1',
+    // baseURL: 'http://localhost:5000/api/v1',
+    baseURL: 'http://localhost:5000/api/v1',
     withCredentials: true,
   });
 

@@ -79,7 +79,7 @@ const Register = () => {
                 </NavLink>
             </div>
             <div className="px-3">
-                <div className="md:w-3/4 lg:w-1/2 mx-auto shadow-lg bg-white py-14 px-4 md:px-10 lg:px-12 mb-16 rounded-lg">
+                <div className="md:w-3/4 lg:w-1/2 mx-auto shadow-lg bg-slate-100 py-14 px-4 md:px-10 lg:px-12 mb-16 rounded-lg">
                     <div className="text-center mb-12">
                         <h1 className="text-4xl text-[#403F3F] font-semibold">Register</h1>
                     </div>

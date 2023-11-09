@@ -1,4 +1,4 @@
-import Title from "./ui/Title";
+// import Title from "./ui/Title";
 import image1 from '../assets/images/banner/img-1.jpg'
 import image2 from '../assets/images/banner/img-2.jpg'
 import image3 from '../assets/images/banner/img-3.png'
@@ -9,12 +9,11 @@ import Container from "./ui/Container";
 const Services = () => {
     return (
         <Container>
-            <div className="pt-6">
-                <Title>
-                    <h1>Services</h1>
-                </Title>
+            <div className="pt-16">
+                <h1 className="text-[#e41f05] font-bold pb-1 text-center">Services</h1>
+                <p className="text-3xl font-bold uppercase text-center">Our Service</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-6 pt-10">
-                    <div className=" shadow-md p-4 rounded-lg">
+                    <div className=" shadow-md p-4 rounded-lg hover:-translate-y-2 overflow-hidden transition duration-200">
                         <img className=" rounded-lg w-full h-[250px] bg-cover object-cover" src={image1} alt="" />
                         <div className="text-center pt-4">
                             <h2 className="text-2xl text-gray-800 font-semibold mb-2">Silent Reading</h2>
@@ -22,7 +21,7 @@ const Services = () => {
                             <button className="py-3 px-6 text-white text-xl font-medium  border-2 shadow-lg bg-[#e41f05] rounded-full">Learn</button>
                         </div>
                     </div>
-                    <div className=" shadow-md p-4 rounded-lg">
+                    <div className=" shadow-md p-4 rounded-lg hover:-translate-y-2 overflow-hidden transition duration-200">
                         <img className=" rounded-lg w-full h-[250px] bg-cover object-cover" src={image3} alt="" />
                         <div className="text-center pt-4">
                             <h2 className="text-2xl text-gray-800 font-semibold mb-2">Book Rentals</h2>
@@ -30,7 +29,7 @@ const Services = () => {
                             <button className="py-3 px-6 text-white text-xl font-medium  border-2 shadow-lg bg-[#e41f05] rounded-full">Learn</button>
                         </div>
                     </div>
-                    <div className=" shadow-md p-4 rounded-lg">
+                    <div className=" shadow-md p-4 rounded-lg hover:-translate-y-2 overflow-hidden transition duration-200">
                         <img className=" rounded-lg w-full h-[250px] bg-cover object-cover" src={image2} alt="" />
                         <div className="text-center pt-4">
                             <h2 className="text-2xl text-gray-800 font-semibold mb-2">Infrastructure</h2>
@@ -38,7 +37,7 @@ const Services = () => {
                             <button className="py-3 px-6 text-white text-xl font-medium  border-2 shadow-lg bg-[#e41f05] rounded-full">Learn</button>
                         </div>
                     </div>
-                    <div className=" shadow-md p-4 rounded-lg">
+                    <div className=" shadow-md p-4 rounded-lg hover:-translate-y-2 overflow-hidden transition duration-200">
                         <img className=" rounded-lg w-full h-[250px] bg-cover object-cover" src={image4} alt="" />
                         <div className="text-center pt-4">
                             <h2 className="text-2xl text-gray-800 font-semibold mb-2">Categorized Book</h2>
@@ -46,7 +45,7 @@ const Services = () => {
                             <button className="py-3 px-6 text-white text-xl font-medium  border-2 shadow-lg bg-[#e41f05] rounded-full">Learn</button>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </Container>

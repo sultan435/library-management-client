@@ -8,6 +8,7 @@ import Title from "../components/ui/Title";
 import Container from "../components/ui/Container";
 import About from "./About";
 import Services from "../components/Services";
+import Contact from "../components/Contact";
 
 
 const Home = () => {
@@ -26,7 +27,7 @@ const Home = () => {
             <Banner></Banner>
             <Container>
                 <Title>
-                    <h1>Books Categories</h1>
+                    <h1 ><span className="text-[#e41f05]">Books</span> Categories</h1>
                 </Title>
                 <div className="text-center text-lg text-gray-700 font-semibold py-4">
                     <p className="pb-4">The Library is a place for everyone to explore the world of reading</p>
@@ -45,11 +46,11 @@ const Home = () => {
                     <img className="h-full" src={img} alt="" />
                 </div>
                 <div className="col-span-1 lg:col-span-2 flex flex-col justify-center items-center lg:justify-start lg:items-start space-y-8 py-16 lg:ml-6">
-                    <h1 className="text-4xl font-bold text-center lg:text-left">A Few Words About <br />Our Library</h1>
+                    <h1 className="text-4xl font-bold text-center lg:text-left">A Few Words About <br /><span className="text-[#e41f05]">Our Library</span></h1>
                     <p className="font-medium text-gray-500 text-center lg:text-left">Libumo Library was founded in 1980 to provide access to books, the world’s most valuable source of knowledge</p>
                     <div className="flex">
                         <button className="bg-[#ff3115] px-10 py-5 text-white font-semibold">READ MORE</button>
-                        <button className="bg-[#aa200d] px-5 py-3">
+                        <button className="bg-[#ff3115] px-5 py-3">
                             <GrNext className="text-2xl text-white" />
                         </button>
                     </div>
@@ -68,6 +69,7 @@ const Home = () => {
             </div>
             <Services></Services>
             <About></About>
+            <Contact></Contact>
         </div>
     );
 };

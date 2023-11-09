@@ -1,6 +1,7 @@
 import Container from "../ui/Container";
 import img from '../../assets/images/logo.png'
 import { FaRegPaperPlane } from "react-icons/fa";
+import { RxCaretRight } from "react-icons/rx";
 import new1 from '../../assets/images/post-1.jpg'
 import new2 from '../../assets/images/post-2.jpg'
 
@@ -8,10 +9,12 @@ import new2 from '../../assets/images/post-2.jpg'
 const Footer = () => {
     return (
         <div className="bg-[#2a2a2a]">
-            <Container>
+            <Container> 
+               
                 <div className="flex justify-start items-start flex-col md:flex-row md:items-start md:justify-between space-y-10 md:space-y-0  py-20">
                     <div>
-                        <h3 className="mb-10 text-2xl text-white font-bold hover:text-[#ff3115]">Get In Touch</h3>
+                        <h3 className="text-2xl text-white font-bold hover:text-[#ff3115] mb-2">Get In Touch</h3>
+                        <div className="border w-20 mb-10 border-[#ff3115]"></div>
                         <div className="space-y-7">
                             <div>
                                 <h3 className='text-gray-500 font-medium text-sm'>FREE CONSULTATION</h3>
@@ -29,7 +32,8 @@ const Footer = () => {
                     </div>
                     <div >
                         <div>
-                            <h3 className="mb-10 text-2xl text-white hover:text-[#ff3115] font-bold text-left lg:text-center">Popular News</h3>
+                            <h3 className="mb-2 text-2xl text-white hover:text-[#ff3115] font-bold text-left">Popular News</h3>
+                            <div className="border w-20 mb-10 border-[#ff3115]"></div>
                         </div>
                         <div className="">
                             <div>
@@ -58,13 +62,7 @@ const Footer = () => {
                                             <button className="bg-[#ff3115] px-5 py-3">
                                                 <FaRegPaperPlane className="text-2xl text-white" />
                                             </button>
-                                        </div>
-                                        {/* <div className="px-4 py-3 bg-[#4a4a4a]">
-                                            <input type="text" placeholder="Enter your E-mail" className="" />
-                                            <button className="">
-                                                <FaRegPaperPlane/>
-                                            </button>
-                                        </div> */}
+                                        </div>                              
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +72,7 @@ const Footer = () => {
                         <div className="flex items-center mb-7">
                             <img className="w-14" src={img} alt="" />
                             <div className="flex flex-col items-start">
-                                <p className="text-2xl font-bold text-white hover:text-[#ff3115]">Libuno</p>
+                                <p className="text-2xl font-bold text-[#ff3115]">Libuno</p>
                                 <span className="text-xs text-gray-500 font-medium">PUBLIC LIBRARY</span>
                             </div>
                         </div>
@@ -83,17 +81,17 @@ const Footer = () => {
                                 <p className=" text-gray-500 font-medium text-sm">Providing access to the best <br /> books for children and adults.</p>
                             </div>
                             <div className="flex gap-10 mb-14">
-                                <div className="text-white font-bold space-y-3 list-none">
-                                    <li className="hover:text-[#ff3115]">ABOUT US</li>
-                                    <li className="hover:text-[#ff3115]">SERVICES</li>
-                                    <li className="hover:text-[#ff3115]">OUT TEAM</li>
-                                    <li className="hover:text-[#ff3115]">PROJECTS</li>
+                                <div className="text-white space-y-3 text-sm list-none">
+                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight/ ></span>ABOUT US</li>
+                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight/ ></span>SERVICES</li>
+                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight/ ></span>OUT TEAM</li>
+                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight/ ></span>PROJECTS</li>
                                 </div>
-                                <div className="text-white font-bold space-y-3 list-none">
-                                    <li className="hover:text-[#ff3115]">NEWS</li>
-                                    <li className="hover:text-[#ff3115]">CONTACTS</li>
-                                    <li className="hover:text-[#ff3115]">FAQ</li>
-                                    <li className="hover:text-[#ff3115]">SHOP</li>
+                                <div className="text-white text-sm space-y-3 list-none">
+                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight/ ></span>NEWS</li>
+                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight/ ></span>CONTACTS</li>
+                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight/ ></span>FAQ</li>
+                                    <li className="hover:text-[#ff3115] flex items-center"><span className="text-xl"><RxCaretRight/ ></span>SHOP</li>
                                 </div>
 
                             </div>
