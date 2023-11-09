@@ -28,7 +28,7 @@ const BorrowedBook = () => {
             .then(res => {
                 if (res?.data?.deletedCount > 0) {
                     Swal.fire({
-                        title: "Deleted!",
+                        title: "Return",
                         text: "Your file has been deleted.",
                         icon: "success"
                       });

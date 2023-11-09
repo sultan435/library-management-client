@@ -12,13 +12,13 @@ const Login = () => {
     const [password, setPassword] = useState('')
     const [loginError, setLoginError] = useState('')
     const [showPassword, setShowPassword] = useState(false)
-    const {loginUser,logoutUser,googleUser} = useAuth()
+    const { loginUser, logoutUser, googleUser } = useAuth()
     const navigate = useNavigate()
     const location = useLocation()
     const axios = useAxios()
 
 
-    const handleUserLogin = async (e) =>{
+    const handleUserLogin = async (e) => {
         e.preventDefault()
         setLoginError("")
 
@@ -39,35 +39,41 @@ const Login = () => {
             return;
         }
         const toastId = toast.loading('Loading...');
-        try{
+        try {
             const result = await loginUser(email, password)
-            const res =await axios.post('/access-token',{email: result.user.email})
-            if(res.data.success){
-                toast.success('Successfully created!', {id: toastId});
+            const res = await axios.post('/access-token', { email: result.user.email })
+            if (res.data.success) {
+                toast.success('Successfully created!', { id: toastId });
                 navigate(location?.state ? location.state : "/")
-            }else{
+            } else {
                 logoutUser()
             }
         }
-        catch(error){
-            toast.error(error.message, {id: toastId});
+        catch (error) {
+            toast.error(error.message, { id: toastId });
         }
     }
 
-    const handleGoogleLogin = async()=>{
+    const handleGoogleLogin = async () => {
         const toastId = toast.loading('Loading...');
-       try{
-        await googleUser(email, password)
-        toast.success('Successfully created!', {id: toastId});
-        navigate(location?.state ? location.state : "/")
-       }
-       catch(error){
-        toast.error(error.message, {id: toastId});
-       }
+        try {
+            const result = await googleUser(email, password)
+
+            const res = await axios.post('/access-token', { email: result.user.email })
+            if (res.data.success) {
+                toast.success('Successfully created!', { id: toastId });
+                navigate(location?.state ? location.state : "/")
+            } else {
+                logoutUser()
+            }
+        }
+        catch (error) {
+            toast.error(error.message, { id: toastId });
+        }
     }
     return (
         <div>
-             <div className="hero h-[350px]" style={{ backgroundImage: `url(${img})` }}>
+            <div className="hero h-[350px]" style={{ backgroundImage: `url(${img})` }}>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md">
                         <h1 className="mb-8 text-5xl font-bold text-black "><span className="text-[#e41f05]">Login</span> Account</h1>
@@ -97,7 +103,7 @@ const Login = () => {
                                 </label>
                                 <input
                                     type="email"
-                                    onBlur={(e)=>setEmail(e.target.value)}
+                                    onBlur={(e) => setEmail(e.target.value)}
                                     placeholder="Email"
                                     className="border rounded-lg py-3 px-4 bg-white my-2 w-full" required />
                             </div>
@@ -108,8 +114,8 @@ const Login = () => {
                                 <div className="relative">
                                     <input
                                         type={showPassword ? "text" : "password"}
-                                      
-                                        onBlur={(e)=>setPassword(e.target.value)}
+
+                                        onBlur={(e) => setPassword(e.target.value)}
                                         placeholder="Password"
                                         className="border rounded-lg py-3 px-4 bg-white my-2 w-full" required />
                                     <span className="absolute top-6 right-7" onClick={() => setShowPassword(!showPassword)}>
@@ -134,7 +140,7 @@ const Login = () => {
                     </div>
                     <p className="text-center">OR</p>
                     <div className="">
-                        <button onClick={handleGoogleLogin}  className="btn w-full hover:bg-[#ff3115] hover:text-white font-medium border-black my-3">
+                        <button onClick={handleGoogleLogin} className="btn w-full hover:bg-[#ff3115] hover:text-white font-medium border-black my-3">
                             <FaGoogle></FaGoogle>
                             Sign in with Google
                         </button>

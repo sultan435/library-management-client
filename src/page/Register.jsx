@@ -53,7 +53,7 @@ const Register = () => {
             })
                 .then(() => console.log("profile update"))
                 .catch()
-            navigate('/')
+            navigate('/login')
         }
         catch (error) {
             console.log(error);
