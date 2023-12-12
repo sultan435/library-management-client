@@ -6,7 +6,6 @@ import useAxios from "../hooks/useAxios";
 import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 import img from '../assets/images/banner/c-banner.jpg'
 
-
 const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -16,7 +15,6 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const axios = useAxios()
-
 
     const handleUserLogin = async (e) => {
         e.preventDefault()
