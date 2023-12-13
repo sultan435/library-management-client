@@ -9,6 +9,7 @@ import Container from "../components/ui/Container";
 import About from "./About";
 import Services from "../components/Services";
 import Donation from "../components/Donation";
+import MostPopular from "./MostPopular";
 
 
 const Home = () => {
@@ -41,7 +42,8 @@ const Home = () => {
                 </div>
 
             </Container>
-            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-6">
+            <MostPopular></MostPopular>
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-6 mt-16">
                 <div className="col-span-3">
                     <img className="h-full" src={img} alt="" />
                 </div>
@@ -67,6 +69,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            
             <Services></Services>
             <About></About>
             <Donation></Donation>
